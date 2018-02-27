@@ -15,7 +15,24 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>amazon</finalName>
+  <plugins>
+  <plugin>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-maven-plugin</artifactId>
+  <version>9.4.0.M0</version>
+  <configuration>
+  <scanIntervalSeconds>5</scanIntervalSeconds>
+  </configuration>
+   </plugin>
+  </plugins>
   </build>
+  <distributionManagement>
+  <repository>
+    <id>releases</id>
+    <url>http://localhost:8081/nexus/content/repositories/releases</url>
+  </repository>
+</distributionManagement>
 </project>
